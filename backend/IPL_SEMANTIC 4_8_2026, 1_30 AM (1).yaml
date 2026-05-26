@@ -3,8 +3,8 @@ tables:
   - name: BALL_BY_BALL
     description: The table contains ball-by-ball records of cricket match events across multiple seasons. Each record captures a single delivery, including the players involved (batter, bowler, and fielders), the teams batting and bowling, and the outcome of the delivery such as runs scored, extras, and dismissals.
     base_table:
-      database: DEMO_DB
-      schema: PUBLIC
+      database: NLP2SQL
+      schema: TEST_SCHEMA
       table: BALL_BY_BALL
     dimensions:
       - name: BALL_NUMBER
@@ -241,8 +241,8 @@ tables:
   - name: IPL_MATCH
     description: The table contains records of cricket matches from the Indian Premier League (IPL). Each record represents a single match and includes details about the teams, venue, season, and match format, as well as toss and outcome information such as the winning team and margin of victory.
     base_table:
-      database: DEMO_DB
-      schema: PUBLIC
+      database: NLP2SQL
+      schema: TEST_SCHEMA
       table: IPL_MATCH
     dimensions:
       - name: BALLS_PER_OVER
@@ -429,8 +429,8 @@ tables:
   - name: PLAYER_INFO
     description: The table contains records of cricket players and their playing characteristics. Each record represents an individual player and includes details about their identity, batting and bowling styles, and fielding position.
     base_table:
-      database: DEMO_DB
-      schema: PUBLIC
+      database: NLP2SQL
+      schema: TEST_SCHEMA
       table: PLAYER_INFO
     dimensions:
       - name: BAT_STYLE
@@ -500,8 +500,8 @@ tables:
   - name: TEAMS
     description: The table contains records of teams, including their names and associated imagery. Each record represents a single team with identifying and display-related details.
     base_table:
-      database: DEMO_DB
-      schema: PUBLIC
+      database: NLP2SQL
+      schema: TEST_SCHEMA
       table: TEAMS
     dimensions:
       - name: IMAGE_URL
