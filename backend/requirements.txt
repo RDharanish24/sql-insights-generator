@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+google-genai
+snowflake-connector-python
+pandas
+pyyaml
+python-dotenv
+tabulate
