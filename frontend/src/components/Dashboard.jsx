@@ -24,10 +24,10 @@ export default function Dashboard() {
     setResult(null);
 
     try {
-      const response = await fetch('http://localhost:8000/api/query', {
+      const response = await fetch('http://localhost:8000/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: query }),
+        body: JSON.stringify({ query: query }),
       });
 
       if (!response.ok) {
@@ -38,7 +38,15 @@ export default function Dashboard() {
       }
 
       const data = await response.json();
-      setResult(data);
+      // Map backend response shape to what the frontend components expect
+      const columns = data.results && data.results.length > 0
+        ? Object.keys(data.results[0])
+        : [];
+      setResult({
+        sql: data.generated_sql,
+        data: data.results,
+        columns: columns,
+      });
     } catch (err) {
       setError(err.message || 'An unexpected error occurred. Please try again.');
       setResult(null);
